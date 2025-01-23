@@ -1,0 +1,217 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 60.53      0.34     0.34   299999     1.15     1.15  search
+  9.65      0.40     0.06   300000     0.18     0.33  toLowercase
+  8.77      0.45     0.05    99999     0.50     1.95  insertToPatricia
+  7.89      0.49     0.04 38520522     0.00     0.00  toLower
+  5.26      0.53     0.03    99523     0.30     0.30  searchNodeForInsert
+  1.75      0.54     0.01   100000     0.10     1.35  removeNode
+  1.75      0.55     0.01    57060     0.18     0.18  searchBackLinkToNode
+  1.75      0.56     0.01                             _init
+  1.75      0.56     0.01                             main
+  0.88      0.57     0.01                             printOneNode
+  0.00      0.57     0.00    63036     0.00     0.00  searchDirectLinkToNode
+  0.00      0.57     0.00        1     0.00     0.00  createPatricia
+  0.00      0.57     0.00        1     0.00     0.00  deletePatricia
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 1.75% of 0.57 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     97.4    0.01    0.55                 main [1]
+                0.05    0.14   99999/99999       insertToPatricia [3]
+                0.01    0.13  100000/100000      removeNode [4]
+                0.12    0.00  100000/299999      search [2]
+                0.06    0.04  300000/300000      toLowercase [5]
+                0.00    0.00       1/1           createPatricia [12]
+                0.00    0.00       1/1           deletePatricia [13]
+-----------------------------------------------
+                             5177486             search [2]
+                0.11    0.00   99999/299999      insertToPatricia [3]
+                0.12    0.00  100000/299999      removeNode [4]
+                0.12    0.00  100000/299999      main [1]
+[2]     60.5    0.34    0.00  299999+5177486 search [2]
+                             5177486             search [2]
+-----------------------------------------------
+                0.05    0.14   99999/99999       main [1]
+[3]     34.2    0.05    0.14   99999         insertToPatricia [3]
+                0.11    0.00   99999/299999      search [2]
+                0.03    0.00   99523/99523       searchNodeForInsert [7]
+-----------------------------------------------
+                0.01    0.13  100000/100000      main [1]
+[4]     23.7    0.01    0.13  100000         removeNode [4]
+                0.12    0.00  100000/299999      search [2]
+                0.01    0.00   57060/57060       searchBackLinkToNode [8]
+                0.00    0.00   63036/63036       searchDirectLinkToNode [11]
+-----------------------------------------------
+                0.06    0.04  300000/300000      main [1]
+[5]     17.5    0.06    0.04  300000         toLowercase [5]
+                0.04    0.00 38520522/38520522     toLower [6]
+-----------------------------------------------
+                0.04    0.00 38520522/38520522     toLowercase [5]
+[6]      7.9    0.04    0.00 38520522         toLower [6]
+-----------------------------------------------
+                             1548370             searchNodeForInsert [7]
+                0.03    0.00   99523/99523       insertToPatricia [3]
+[7]      5.3    0.03    0.00   99523+1548370 searchNodeForInsert [7]
+                             1548370             searchNodeForInsert [7]
+-----------------------------------------------
+                             1019721             searchBackLinkToNode [8]
+                0.01    0.00   57060/57060       removeNode [4]
+[8]      1.8    0.01    0.00   57060+1019721 searchBackLinkToNode [8]
+                             1019721             searchBackLinkToNode [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[9]      1.8    0.01    0.00                 _init [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     0.9    0.01    0.00                 printOneNode [10]
+-----------------------------------------------
+                             1050322             searchDirectLinkToNode [11]
+                0.00    0.00   63036/63036       removeNode [4]
+[11]     0.0    0.00    0.00   63036+1050322 searchDirectLinkToNode [11]
+                             1050322             searchDirectLinkToNode [11]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[12]     0.0    0.00    0.00       1         createPatricia [12]
+-----------------------------------------------
+                               72976             deletePatricia [13]
+                0.00    0.00       1/1           main [1]
+[13]     0.0    0.00    0.00       1+72976   deletePatricia [13]
+                               72976             deletePatricia [13]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [9] _init                  [10] printOneNode            [7] searchNodeForInsert
+  [12] createPatricia          [4] removeNode              [6] toLower
+  [13] deletePatricia          [2] search                  [5] toLowercase
+   [3] insertToPatricia        [8] searchBackLinkToNode
+   [1] main                   [11] searchDirectLinkToNode
